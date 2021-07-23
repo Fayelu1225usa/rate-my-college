@@ -1,0 +1,34 @@
+<%include ../partials/header%>
+    
+    <header class="jumbotron" style="background: #deebf3;">
+        <div class="container">
+            <h1>Welcome To RateMyColleges!</h1>
+            <p> Share and Appreciate Different Perspectives of Universities All Over the World</p>
+            <p>
+                <a class="btn btn-info btn-lg" href="/universities/new"><i class="fas fa-plus"></i> Add New University</a>
+            </p>
+            
+        </div>
+    </header>
+    
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% universities.forEach(function(university) { %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail thumbnail-sm">
+                    <img class="thumbnail-image" src= <%= university.image%> >
+                    <div class="caption">
+                        <h4> <%= university.name %> </h4>
+                    </div>
+                    <div class="thumbnail-footer">
+                        <a href="/universities/<%= university._id%>" class="btn btn-primary"><i class="fas fa-search"></i> More Info</a>
+                    </div>
+                </div>
+                
+            </div>
+        <% }); %>
+    </div>
+
+<%include ../partials/footer%>
+
+
+

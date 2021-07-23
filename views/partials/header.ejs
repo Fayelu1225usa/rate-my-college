@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <!-- Make site responsive on mobile/tablet -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>RateMyColleges</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.0.9/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" /> 
+        <!-- optionally if you need to use a theme, then include the theme CSS file as mentioned below -->
+        <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.0.9/themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+        
+                    <a class="navbar-brand" href="/"><i class="fas fa-star"></i> RateMyColleges</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav">
+                    <li class="<%= typeof page !== 'undefined' && page === 'universities' ? 'active' : '' %>"><a href="/universities">Home</a></li>
+                  </ul>
+                  <form class="navbar-form navbar-left" action="/universities" method="GET">
+                    <div class="form-group">
+                      <input type="text" name="search" placeholder="University Search" class="form-control">
+                      <input type="submit" value="search" class="btn btn-default">
+                    </div>
+                  </form>
+                  <ul class="nav navbar-nav navbar-right">
+                      <% if(!currentUser){ %>
+                          <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">Login <i class="fas fa-user"></i></a></li>
+                          <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">Register <i class="fas fa-user-plus"></i></a></li>
+                      <% } else { %>
+                          <li><a href="/users/<%= currentUser._id%>">Signed In As <%= currentUser.username %>  <i class="fas fa-graduation-cap"></i></a></li>
+                          <li><a href="/logout">Logout  <i class="fas fa-sign-out-alt"></i></a></li>
+                      <% } %>
+                  </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <% if (error && error.length > 0) { %>
+                <div class="alert alert-danger" role="alert">
+                <%= error %>
+                </div>
+            <% } %>
+            
+            <% if (success && success.length > 0) { %>
+                <div class="alert alert-success" role="alert">
+                <%= success %>
+                </div>
+            <% } %>
+        </div>
+        
+        <div class="container">
+        
+

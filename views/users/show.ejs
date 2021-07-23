@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<div class="row">
+	<div class="col-md-4">
+			<h3><%= user.firstName + " " + user.lastName %>'s Profile</h3>
+		<div class="thumbnail">
+			<img src="<%= user.avatar %>" alt="user profile image">
+		</div>
+		
+		
+
+	</div>
+	<div class="col-md-8">
+		<p><strong>Email:</strong> <a href="mailto:<%= user.email %>"><%= user.email %></a></p>
+		<hr>
+		<p><strong>University:</strong> I come from <strong> <%=user.school%> </strong></p>
+		<hr>
+		<p><strong>Self-Introduction:</strong> </p>
+		<p><%= user.introduction %></p>
+		<hr>
+		<p><strong>All universities shared by <em><%= user.firstName %></em></strong></p>
+		<ul>
+		<% universities.forEach(function(university) { %>
+			<li><a href="/universities/<%= university.id %>"><%= university.name %></a></li>
+		<% }); %>
+		</ul>
+	</div>
+</div>
+
+<% include ../partials/footer %>

@@ -1,0 +1,63 @@
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail-sm {
+    
+    width: 247px;
+    height: 272px;
+}
+
+
+.thumbnail-footer {
+    position: absolute;
+    bottom: 30px;
+    left: 85px;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+.delete-form {
+    display: inline;
+}
+
+.navbar-default {
+   background-color: #deebf3;
+}
+
+.white-link{
+	color: #fdfeff; 
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    color: #f4f2f7;
+    background-color: #a3b4ec;
+}
+
+.thumbnail-image{
+    width: 211px !important;
+    height: 150px !important;
+}
+
+/* Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.marker {
+	background-color: #ec0f0f;
+    background-size: cover;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+}

@@ -1,0 +1,29 @@
+#content {
+	text-align: center;
+	padding-top: 17%;
+
+}
+
+body {
+	background: url(https://i.ibb.co/PCK54kP/Silhouettes-of-students-with-graduate-caps-in-a-row-on-sunset-background-Graduation-ceremony-at-univ.jpg);
+	background-size: cover;
+	background-position: center;
+	font-family: Lato;
+	color: white;
+}
+
+html {
+	height: 100%;
+}
+
+hr {
+	width: 50%;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 5.0em;
+}
+
+
+
